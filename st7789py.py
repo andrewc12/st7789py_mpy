@@ -79,7 +79,7 @@ def color565(r, g=0, b=0):
 
 
 class ST77xx:
-    def __init__(self, spi, width, height, reset, dc, cs=None, backlight=None):
+    def __init__(self, spi, width, height, reset, dc, cs=None, backlight=None, start_x=0, start_y=0):
         """
         display = st7789.ST7789(
             SPI(1, baudrate=40000000, phase=0, polarity=1),
@@ -99,8 +99,8 @@ class ST77xx:
         self.dc = dc
         self.cs = cs
         self.backlight = backlight
-        self.start_x = 0
-        self.start_y = 0
+        self.start_x = start_x
+        self.start_y = start_y
 
     def dc_low(self):
         self.dc.off()
